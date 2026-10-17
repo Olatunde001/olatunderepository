@@ -1,0 +1,4 @@
+# unrs-resolver's postinstall selects its platform-specific optional native
+# binding, so allow this single dependency's install hook during clean installs.
+allowBuilds:
+  unrs-resolver: true

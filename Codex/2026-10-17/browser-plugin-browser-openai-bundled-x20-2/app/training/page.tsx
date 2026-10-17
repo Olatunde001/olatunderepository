@@ -1,0 +1,14 @@
+import type { Metadata } from "next";
+import { CTA, Eyebrow, PageHero, SectionHeading } from "@/components/sections";
+
+export const metadata: Metadata = { title: "In-Service Civil Service Training" };
+const themes = ["Leadership and supervisory practice", "Public administration and policy", "Digital skills for the workplace", "Communication and records management", "Ethics, accountability and service delivery", "Professional development for teams"];
+
+export default function TrainingPage() {
+  return <main id="main"><PageHero label="In-service training" title="Learning that moves public service forward." intro="Professional development for serving officers and teams across ministries, departments and agencies." image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=2000&q=85" />
+    <section className="section-pad"><div className="container about-intro"><div><Eyebrow>Professional development</Eyebrow><h2>Practical learning for the work of <em>government.</em></h2></div><div className="prose"><p>In-service training supports public officers to strengthen their knowledge, adapt to changing responsibilities and apply new skills in the workplace.</p><p>The Centre works with public service organisations to support relevant learning. Training topics, formats and schedules are confirmed with participating organisations according to their needs.</p></div></div></section>
+    <section className="training-section"><div className="container training-grid"><div className="training-photo" role="img" aria-label="Participants in a professional training session"/><div><Eyebrow>Learning themes</Eyebrow><h2>Skills for effective <em>public service.</em></h2><p>Training can be shaped around organisational priorities and participant needs. Areas may include:</p><ul className="theme-list">{themes.map((x, i) => <li key={x}><span>0{i + 1}</span>{x}</li>)}</ul><p className="small-note">Specific courses and schedules are subject to confirmation by the Centre.</p></div></div></section>
+    <section className="section-pad process-section"><div className="container"><SectionHeading eyebrow="How it works" title="A straightforward path to training." text="Connect with the Centre to discuss learning goals and plan a suitable programme."/><div className="process-grid"><article><span>01</span><h3>Tell us your needs</h3><p>Share your organisation’s development priorities and the intended participants.</p></article><article><span>02</span><h3>Plan together</h3><p>Discuss suitable topics, delivery format, timing and other requirements.</p></article><article><span>03</span><h3>Learn and apply</h3><p>Participants engage in learning designed to connect with their professional practice.</p></article></div></div></section>
+    <CTA title="Plan training for your team." text="Contact the Centre to discuss in-service learning for your organisation." href="/about" label="Get in touch" />
+  </main>;
+}
